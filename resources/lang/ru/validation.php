@@ -60,7 +60,7 @@ return [
     'string' => 'The :attribute must be greater than or equal to :value characters.',
     'array' => 'The :attribute must have :value items or more.',
   ],
-  'image' => 'The :attribute must be an image.',
+  'image' => 'Поле :attribute должен быть изображением.',
   'in' => 'The selected :attribute is invalid.',
   'in_array' => 'The :attribute field does not exist in :other.',
   'integer' => 'The :attribute must be an integer.',
@@ -82,11 +82,11 @@ return [
   ],
   'max' => [
     'numeric' => 'The :attribute must not be greater than :max.',
-    'file' => 'The :attribute must not be greater than :max kilobytes.',
-    'string' => 'The :attribute must not be greater than :max characters.',
+    'file' => 'Поле :attribute не должен превышать :max килобайт.',
+    'string' => 'Поле :attribute не должен превышать :max символов',
     'array' => 'The :attribute must not have more than :max items.',
   ],
-  'mimes' => 'The :attribute must be a file of type: :values.',
+  'mimes' => 'Поле :attribute должен быть файлом типа: :values.',
   'mimetypes' => 'The :attribute must be a file of type: :values.',
   'min' => [
     'numeric' => 'The :attribute must be at least :min.',
@@ -160,6 +160,9 @@ return [
     'author' => 'автор',
     'title' => 'заголовок',
     'content' => 'контент',
+    'logo' => 'логотип',
+    'description_title' => 'заголовок описании',
+    'description' => 'описание',
   ],
 
 ];

@@ -24,7 +24,9 @@ mix.js(['resources/js/layouts/master.js',
     'resources/js/admin/layouts/footer.js',
     'resources/js/admin/pages/home.js',
     'resources/js/admin/pages/publications/create.js',
-    'resources/js/admin/pages/projects.js'
+    'resources/js/admin/pages/projects/index.js',
+    'resources/js/admin/pages/projects/create.js',
+    'resources/js/admin/pages/projects/edit.js',
   ], 'public/js/admin.js')
 
 .styles(['resources/css/layouts/master.css',

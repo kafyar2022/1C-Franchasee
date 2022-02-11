@@ -30,6 +30,7 @@
 }
 
 .project-item {
+  position: relative;
   display: grid;
   grid-template-columns: 312px auto 176px;
   grid-template-rows: 192px auto;
@@ -38,7 +39,12 @@
   overflow: hidden;
 }
 
+.project-item h3 b {
+  font-weight: 600;
+}
+
 .project-logo-wrapper {
+  position: relative;
   min-width: 112px;
   padding-top: 32px;
   padding-right: 56px;
@@ -56,12 +62,44 @@
   align-self: center;
 }
 
-.project-description-wrapper h3 {
+.project-description-wrapper .description-title {
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  width: 100%;
+  max-width: 664px;
+  height: 36px;
+  min-height: 36px;
+}
+
+.project-description-wrapper .description {
+  width: 100%;
+  max-width: 664px;
+  min-height: 64px;
+  max-height: 64px;
+  resize: none;
+}
+
+.project-description-wrapper h3,
+.project-content h1,
+.project-content h2,
+.project-content h3,
+.project-content h4,
+.project-content h5,
+.project-content h6 {
   max-width: max-content;
   text-transform: uppercase;
   font-size: 24px;
   font-weight: 600;
   margin-bottom: 16px;
+}
+
+.project-content ul,
+.project-content ol {
+  list-style: inside;
+  padding-left: 16px;
+  margin-bottom: 24px;
 }
 
 .project-content-wrapper {
@@ -74,6 +112,10 @@
 
 .project-content {
   padding-bottom: 32px;
+}
+
+.project-content .btn-wrapper {
+  margin-top: 16px;
 }
 
 .project-btn-wrapper {

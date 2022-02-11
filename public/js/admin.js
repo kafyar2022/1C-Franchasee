@@ -51,6 +51,10 @@ function showActions(e) {
       switchProjectsActions(e);
       break;
 
+    case 'project':
+      switchProjectActions(e);
+      break;
+
     case 'success-steps':
       switchSuccessStepsActions(e);
       break;
@@ -359,6 +363,28 @@ function switchProjectsActions(e) {
     var inputID = form.querySelector('[name="id"]');
     inputID.value = e.target.dataset.id;
   };
+}
+
+function switchProjectActions(e) {
+  // show project's actions' list
+  var actions = body.querySelector('[data-list="project-actions"]');
+  actions.style.left = e.pageX + 8 + 'px';
+  actions.style.top = e.pageY + 8 + 'px'; // when delete button is clicked switch to project's delete form
+
+  var deleteBtn = actions.querySelector('[data-action="delete"]');
+
+  deleteBtn.onclick = function () {
+    // show form
+    var form = body.querySelector('[data-form="delete-project"]');
+    form.classList.remove('hidden'); // fill form
+
+    var inputID = form.querySelector('[name="id"]');
+    inputID.value = e.target.dataset.id;
+  }; // give project's id to edit link
+
+
+  var editLink = actions.querySelector('[data-action="edit"]');
+  editLink.href += "?id=".concat(e.target.dataset.id);
 }
 
 function switchSuccessStepsActions(e) {
@@ -1178,10 +1204,60 @@ if (createPublication) {
 
 // This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.
 (() => {
-/*!**********************************************!*\
-  !*** ./resources/js/admin/pages/projects.js ***!
-  \**********************************************/
+/*!****************************************************!*\
+  !*** ./resources/js/admin/pages/projects/index.js ***!
+  \****************************************************/
+window.previewProjectLogo = function () {
+  // get user's uploaded image
+  var imgPath = document.querySelector('input[type=file]').files[0];
+  var reader = new FileReader();
 
+  reader.onloadend = function () {
+    // convert image file to base64 string and save to localStorage
+    localStorage.setItem("image", reader.result);
+    var img = document.getElementById('image');
+    img.src = localStorage.getItem('image');
+    img.style.objectFit = 'contain';
+  };
+
+  if (imgPath) {
+    reader.readAsDataURL(imgPath);
+  }
+};
+})();
+
+// This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.
+(() => {
+/*!*****************************************************!*\
+  !*** ./resources/js/admin/pages/projects/create.js ***!
+  \*****************************************************/
+var createProjectPage = document.querySelector('.create-project-page');
+
+if (createProjectPage) {
+  Simditor.locale = 'ru-RU';
+  new Simditor({
+    textarea: $('#simditor'),
+    toolbar: ['title', 'bold', 'italic', 'underline', 'strikethrough', 'fontScale', 'color', 'ol', 'ul', 'blockquote', 'table', 'hr', 'indent', 'outdent'],
+    cleanPaste: true
+  });
+}
+})();
+
+// This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.
+(() => {
+/*!***************************************************!*\
+  !*** ./resources/js/admin/pages/projects/edit.js ***!
+  \***************************************************/
+var editProjectPage = document.querySelector('.edit-project-page');
+
+if (editProjectPage) {
+  Simditor.locale = 'ru-RU';
+  new Simditor({
+    textarea: $('#simditor'),
+    toolbar: ['title', 'bold', 'italic', 'underline', 'strikethrough', 'fontScale', 'color', 'ol', 'ul', 'blockquote', 'table', 'hr', 'indent', 'outdent'],
+    cleanPaste: true
+  });
+}
 })();
 
 /******/ })()

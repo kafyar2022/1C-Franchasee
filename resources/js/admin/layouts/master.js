@@ -49,6 +49,10 @@ function showActions(e) {
       switchProjectsActions(e);
       break;
 
+    case 'project':
+      switchProjectActions(e);
+      break;
+
     case 'success-steps':
       switchSuccessStepsActions(e);
       break;
@@ -370,6 +374,31 @@ function switchProjectsActions(e) {
 
     inputID.value = e.target.dataset.id;
   }
+}
+
+function switchProjectActions(e) {
+  // show project's actions' list
+  let actions = body.querySelector('[data-list="project-actions"]');
+
+  actions.style.left = e.pageX + 8 + 'px';
+  actions.style.top = e.pageY + 8 + 'px';
+  // when delete button is clicked switch to project's delete form
+  let deleteBtn = actions.querySelector('[data-action="delete"]');
+
+  deleteBtn.onclick = () => {
+    // show form
+    let form = body.querySelector('[data-form="delete-project"]');
+
+    form.classList.remove('hidden');
+    // fill form
+    const inputID = form.querySelector('[name="id"]');
+
+    inputID.value = e.target.dataset.id;
+  }
+
+  // give project's id to edit link
+  let editLink = actions.querySelector('[data-action="edit"]');
+  editLink.href += `?id=${e.target.dataset.id}`; 
 }
 
 function switchSuccessStepsActions(e) {

@@ -4,6 +4,16 @@
 
 @section('content')
   <main class="projects-page">
+    <div class="container">
+      <ul class="breadcrumbs">
+        <li>
+          <a href="{{ route('home') }}">Главная</a>
+        </li>
+        <li>
+          <a>{{ $page->title }}</a>
+        </li>
+      </ul>
+    </div>
     <section class="our-projects">
       <div class="container">
         <h1 class="our-projects-heading">{{ $page['our-projects-heading'] }}</h1>
@@ -20,7 +30,7 @@
                 <p>{{ $project->description }}</p>
               </div>
               <div class="project-content-wrapper">
-                <div class="project-content">{{ $project->content }}</div>
+                <div class="project-content">{!! $project->content !!}</div>
               </div>
               <div class="project-btn-wrapper">
                 <button type="button" onclick="window.toggleProjectContent(this.closest('li'))"></button>

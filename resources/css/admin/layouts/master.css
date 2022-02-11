@@ -3,6 +3,7 @@
 [data-table="products"] *,
 [data-table="advantages"] *,
 [data-table="projects"] *,
+[data-table="project"] *,
 [data-table="companies"] *,
 [data-table="success-steps"] *,
 [data-table="members"] *,
@@ -20,6 +21,7 @@
 [data-table="products"],
 [data-table="advantages"],
 [data-table="projects"],
+[data-table="project"],
 [data-table="companies"],
 [data-table="success-steps"],
 [data-table="members"],
@@ -29,7 +31,7 @@
 [data-table="publications"],
 [data-table="services"],
 [data-table="values"] {
-  cursor: context-menu;
+  cursor: copy;
   pointer-events: auto;
 }
 
@@ -67,6 +69,12 @@
 
 .simditor .simditor-body p {
   margin: 0px;
+}
+
+.project-item .simditor .simditor-body,
+.project-item .simditor .simditor-wrapper .simditor-placeholder {
+  padding: 8px 0;
+  min-height: 400px;
 }
 
 
