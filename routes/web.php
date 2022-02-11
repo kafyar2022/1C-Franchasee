@@ -33,6 +33,7 @@ Route::get('/publications/read/{id}', [PublicationsController::class, 'publicati
 Route::get('/projects', [ProjectsController::class, 'index'])->name('projects');
 
 Route::get('/services', [ServicesController::class, 'services'])->name('services');
+Route::get('/services/download', [ServicesController::class, 'download'])->name('services.download');
 
 Route::get('/products/read/{id}', [ProductsController::class, 'productsRead'])->name('products.read');
 

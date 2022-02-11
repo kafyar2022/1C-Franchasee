@@ -431,6 +431,132 @@ class TextsSeeder extends Seeder
         'caption' => 'our-projects-subheading',
         'text' => 'Сопровождение всех ниже указанных организаций продолжается по сей день.',
       ),
+      array(
+        'id' => 58,
+        'type' => null,
+        'page_id' => 4,
+        'caption' => 'services-heading',
+        'text' => 'Наши услуги',
+      ),
+      array(
+        'id' => 59,
+        'type' => null,
+        'page_id' => 4,
+        'caption' => 'services-subheading',
+        'text' => 'Мы предоставляем обширное колличество услуг по продуктам
+1C для самых рахных отраслевых компаний.',
+      ),
+      array(
+        'id' => 60,
+        'type' => null,
+        'page_id' => 4,
+        'caption' => 'service-first-title',
+        'text' => 'Консультация',
+      ),
+      array(
+        'id' => 61,
+        'type' => null,
+        'page_id' => 4,
+        'caption' => 'service-first-text',
+        'text' => 'Консультация по выбору лучшего
+решения из продуктов 1С для
+вашего бизнеса.',
+      ),
+      array(
+        'id' => 62,
+        'type' => null,
+        'page_id' => 4,
+        'caption' => 'service-second-title',
+        'text' => 'Установка',
+      ),
+      array(
+        'id' => 63,
+        'type' => null,
+        'page_id' => 4,
+        'caption' => 'service-second-text',
+        'text' => 'Установка и тонкая настройка
+выбранного Вами решения на вашем
+сервере для вашего удобства.',
+      ),
+      array(
+        'id' => 64,
+        'type' => null,
+        'page_id' => 4,
+        'caption' => 'service-third-title',
+        'text' => 'Обучение',
+      ),
+      array(
+        'id' => 65,
+        'type' => null,
+        'page_id' => 4,
+        'caption' => 'service-third-text',
+        'text' => 'Обучение и поддержка вашего
+персонала по работе с системой
+вплоть до адаптации.',
+      ),
+      array(
+        'id' => 66,
+        'type' => null,
+        'page_id' => 4,
+        'caption' => 'service-fourth-title',
+        'text' => 'Разработка',
+      ),
+      array(
+        'id' => 67,
+        'type' => null,
+        'page_id' => 4,
+        'caption' => 'service-fourth-text',
+        'text' => 'Разработка индивидуального
+решения под ваши нужды на основе
+одного из 1С продуктов.',
+      ),
+      array(
+        'id' => 68,
+        'type' => null,
+        'page_id' => 4,
+        'caption' => 'service-fifth-title',
+        'text' => 'Доработка',
+      ),
+      array(
+        'id' => 69,
+        'type' => null,
+        'page_id' => 4,
+        'caption' => 'service-fifth-text',
+        'text' => 'Доработка и сопровождение
+вашего имеющегося
+1С продукта.',
+      ),
+      array(
+        'id' => 70,
+        'type' => null,
+        'page_id' => 4,
+        'caption' => 'service-sixth-title',
+        'text' => 'Ввод',
+      ),
+      array(
+        'id' => 71,
+        'type' => null,
+        'page_id' => 4,
+        'caption' => 'service-sixth-text',
+        'text' => 'Ввод ваших первичных
+данных для демонстрации
+системы.',
+      ),
+      array(
+        'id' => 72,
+        'type' => null,
+        'page_id' => 4,
+        'caption' => 'be-familiar',
+        'text' => 'Ознакомьтесь с нашим прайс-листом услуг',
+      ),
+      array(
+        'id' => 72,
+        'type' => null,
+        'page_id' => 4,
+        'caption' => 'valid-date',
+        'text' => 'Указанные цены
+актуальны до 01.10.2021.',
+      ),
     );
 
     foreach ($texts as $text) {

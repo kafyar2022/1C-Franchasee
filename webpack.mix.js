@@ -17,7 +17,8 @@ mix.js(['resources/js/layouts/master.js',
     'resources/js/pages/home.js',
     'resources/js/pages/about.js',
     'resources/js/pages/publications/read.js',
-    'resources/js/pages/projects.js'
+    'resources/js/pages/projects.js',
+    'resources/js/pages/services.js',
   ], 'public/js/app.js')
   .js(['resources/js/admin/layouts/master.js',
     'resources/js/admin/layouts/header.js',
@@ -40,7 +41,8 @@ mix.js(['resources/js/layouts/master.js',
     'resources/css/pages/about.css',
     'resources/css/pages/publications/index.css',
     'resources/css/pages/publications/read.css',
-    'resources/css/pages/projects.css'
+    'resources/css/pages/projects.css',
+    'resources/css/pages/services.css'
   ], 'public/css/app.css')
   .styles(['resources/css/admin/layouts/master.css',
     'resources/css/admin/layouts/header.css',
