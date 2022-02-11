@@ -63,9 +63,10 @@ Route::group(['middleware' => ['AuthCheck']], function () {
 
   Route::get('/admin/projects', [ProjectsController::class, 'indexAdmin'])->name('admin.projects');
   Route::get('/admin/projects/create', [ProjectsController::class, 'createProject'])->name('admin.projects.create');
-  Route::get('/admin/projects/update', [ProjectsController::class, 'editProject'])->name('admin.projects.edit');
+  Route::post('/admin/projects/update', [ProjectsController::class, 'editProject'])->name('admin.projects.edit');
 
   Route::get('/admin/services', [ServicesController::class, 'adminServices'])->name('admin.services');
+  Route::post('/services/change-file', [ServicesController::class, 'changeFile'])->name('services.change.file');
 
   Route::get('/admin/products/create', [ProductsController::class, 'adminProductsCreate'])->name('admin.products.create');
   Route::get('/admin/products/read/{id}', [ProductsController::class, 'adminProductsRead'])->name('admin.products.read');

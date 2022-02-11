@@ -398,7 +398,7 @@ function switchProjectActions(e) {
 
   // give project's id to edit link
   let editLink = actions.querySelector('[data-action="edit"]');
-  editLink.href += `?id=${e.target.dataset.id}`; 
+  editLink.href += `?id=${e.target.dataset.id}`;
 }
 
 function switchSuccessStepsActions(e) {

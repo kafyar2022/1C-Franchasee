@@ -163,6 +163,7 @@ return [
     'logo' => 'логотип',
     'description_title' => 'заголовок описании',
     'description' => 'описание',
+    'file' => 'файл',
   ],
 
 ];

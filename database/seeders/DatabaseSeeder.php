@@ -101,7 +101,6 @@ class DatabaseSeeder extends Seeder
       ProjectsSeeder::class,
       CompaniesSeeder::class,
       MembersSeeder::class,
-      ServicesSeeder::class,
       TextsSeeder::class,
     ]);
   }
