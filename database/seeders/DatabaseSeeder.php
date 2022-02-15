@@ -98,6 +98,7 @@ class DatabaseSeeder extends Seeder
       PagesSeeder::class,
       AdvantagesSeeder::class,
       ProductsSeeder::class,
+      ProductContentsSeeder::class,
       ProjectsSeeder::class,
       CompaniesSeeder::class,
       MembersSeeder::class,

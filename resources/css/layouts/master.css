@@ -55,8 +55,13 @@ main {
   flex-grow: 1;
 }
 
-ul {
+ul:not(.product-item ul) {
   list-style: none;
+}
+
+.product-item ul {
+  margin-top: 16px;
+  padding-left: 32px;
 }
 
 .simdit ul {
@@ -127,10 +132,14 @@ input[type="search"]::-webkit-search-results-decoration {
   margin-right: auto;
 }
 
-h1,
-h2 {
+h1:not(.edit-product-page h1):not(.create-product-page h1):not(.products-page h1):not(.services-page h1):not(.projects-page h1):not(.publications-page h1),
+h2:not(.edit-product-page h2):not(.create-product-page h2):not(.products-page h2) {
   padding-top: 80px;
   padding-bottom: 16px;
+}
+
+h1,
+h2 {
   font-size: 24px;
   font-weight: 600;
 }

@@ -68,8 +68,10 @@ Route::group(['middleware' => ['AuthCheck']], function () {
   Route::get('/admin/services', [ServicesController::class, 'adminServices'])->name('admin.services');
   Route::post('/services/change-file', [ServicesController::class, 'changeFile'])->name('services.change.file');
 
-  Route::get('/admin/products/create', [ProductsController::class, 'adminProductsCreate'])->name('admin.products.create');
+  Route::get('/admin/products/create', [ProductsController::class, 'createProduct'])->name('admin.products.create');
+  Route::get('/admin/products/edit', [ProductsController::class, 'editProduct'])->name('admin.products.edit');
   Route::get('/admin/products/read/{id}', [ProductsController::class, 'adminProductsRead'])->name('admin.products.read');
+  Route::get('/admin/products/delete-content', [ProductsController::class, 'deleteProductContent']);
 
   Route::get('/admin/its', [ITSController::class, 'adminIts'])->name('admin.its');
   // <<= page routes
@@ -78,7 +80,7 @@ Route::group(['middleware' => ['AuthCheck']], function () {
   Route::post('/texts', [AdminController::class, 'texts'])->name('texts');
   Route::post('/pages', [AdminController::class, 'pages'])->name('pages');
 
-  Route::post('/products/create', [ProductsController::class, 'createProduct'])->name('products.create');
+  Route::post('/products/store', [ProductsController::class, 'storeProduct'])->name('products.store');
   Route::post('/products/update', [ProductsController::class, 'updateProduct'])->name('products.update');
   Route::post('/products/delete', [ProductsController::class, 'deleteProduct'])->name('products.delete');
 

@@ -43,7 +43,7 @@ class AppServiceProvider extends ServiceProvider
         'id',
         'title',
         'trashed'
-      )->where('trashed', false)->get();
+      )->where('trashed', false)->orderBy('title', 'asc')->get();
 
       //! footer data
       $footer = Helper::connectFootersTexts();

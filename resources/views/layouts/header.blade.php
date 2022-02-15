@@ -116,6 +116,9 @@
               </div>
               
               <ul class="products-dropdown-list">
+                @if (count($header['products']) == 0)
+                  <li class="products-dropdown-item">Продукты отсутсвуют</li>
+                @endif
                 @foreach ($header['products'] as $product)
                 <li class="products-dropdown-item">
                   <a class="products-dropdown-link" href="{{route('products.read', $product->id)}}">{{$product->title}}</a>

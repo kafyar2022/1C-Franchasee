@@ -66,6 +66,7 @@
   display: grid;
   grid-template-columns: auto auto;
   grid-gap: 8px 32px;
+  height: max-content;
 }
 .footer-products dt {
   grid-column: span 2;

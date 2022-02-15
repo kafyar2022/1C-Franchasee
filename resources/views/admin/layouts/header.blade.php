@@ -116,6 +116,9 @@
               </div>
               
               <ul class="products-dropdown-list">
+                @if (count($header['products']) == 0)
+                  <li data-table="pages" data-page-id="{{$page->id}}" data-route="products" class="products-dropdown-item">Продукты отсутсвуют</li>
+                @endif
                 @foreach ($header['products'] as $product)
                 <li class="products-dropdown-item">
                   <a data-table="products" data-product-id="{{$product->id}}" class="products-dropdown-link" href="{{route('admin.products.read', $product->id)}}">{{$product->title}}</a>

@@ -191,7 +191,11 @@ function switchProductsActions(e) {
 
     var formProductsID = form.querySelector('[name="products-id"]');
     formProductsID.value = e.target.dataset.productId;
-  };
+  }; // when edit button is clicked switch to product's edit page
+
+
+  var editLink = actionsList.querySelector('[data-action="edit"]');
+  editLink.href = editLink.href + "?id=".concat(e.target.dataset.productId);
 }
 
 function switchAdvantagesActions(e) {
@@ -1257,6 +1261,211 @@ if (editProjectPage) {
     toolbar: ['title', 'bold', 'italic', 'underline', 'strikethrough', 'fontScale', 'color', 'ol', 'ul', 'blockquote', 'table', 'hr', 'indent', 'outdent'],
     cleanPaste: true
   });
+}
+})();
+
+// This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.
+(() => {
+/*!*****************************************************!*\
+  !*** ./resources/js/admin/pages/products/create.js ***!
+  \*****************************************************/
+var createProductPage = document.querySelector('.create-product-page');
+
+if (createProductPage) {
+  var simditors = createProductPage.querySelectorAll('[data-type="simditor"]');
+  var template = createProductPage.querySelector('#product-content').content;
+  var contentTemplate = template.querySelector('dd');
+  var productItem = createProductPage.querySelector('.product-item');
+  var form = createProductPage.querySelector('form');
+
+  window.addNewProductContent = function () {
+    var newContent = contentTemplate.cloneNode(true);
+    var newSimditor = newContent.querySelector('[data-type="simditor"]');
+    productItem.appendChild(newContent);
+    new Simditor({
+      textarea: newSimditor,
+      pasteImage: true,
+      upload: {
+        url: '/upload/simditor_photo',
+        //image upload url by server
+        fileKey: 'simditor_photo',
+        //name of input
+        connectionCount: 3,
+        leaveConfirm: 'Пожалуйста дождитесь окончания загрузки изображений на сервер! Вы уверены что хотите закрыть страницу?'
+      },
+      imageButton: 'upload',
+      toolbar: ['title', 'bold', 'italic', 'underline', 'strikethrough', 'fontScale', 'color', 'ol', 'ul', 'blockquote', 'table', 'link', 'image', 'hr', 'indent', 'outdent', 'alignment']
+    });
+  };
+
+  Simditor.locale = 'ru-RU';
+  simditors.forEach(function (simditor) {
+    new Simditor({
+      textarea: simditor,
+      pasteImage: true,
+      upload: {
+        url: '/upload/simditor_photo',
+        //image upload url by server
+        fileKey: 'simditor_photo',
+        //name of input
+        connectionCount: 3,
+        leaveConfirm: 'Пожалуйста дождитесь окончания загрузки изображений на сервер! Вы уверены что хотите закрыть страницу?'
+      },
+      imageButton: 'upload',
+      toolbar: ['title', 'bold', 'italic', 'underline', 'strikethrough', 'fontScale', 'color', 'ol', 'ul', 'blockquote', 'table', 'link', 'image', 'hr', 'indent', 'outdent', 'alignment']
+    });
+  });
+  form.addEventListener('submit', function (evt) {
+    evt.preventDefault();
+    var elements = form.querySelectorAll('[data-name="content"]');
+    var contents = [];
+
+    for (var i = 0; i < elements.length; i++) {
+      contents[i] = elements[i].value;
+    }
+
+    contents = JSON.stringify(contents);
+    var contentsElement = document.createElement('textarea');
+    contentsElement.name = 'contents';
+    contentsElement.classList.add('visually-hidden');
+    contentsElement.value = contents;
+    form.appendChild(contentsElement);
+    form.submit();
+  });
+
+  window.previewProductPicture = function () {
+    // get user's uploaded image
+    var imgPath = document.querySelector('#picture').files[0];
+    var reader = new FileReader();
+
+    reader.onloadend = function () {
+      // convert image file to base64 string and save to localStorage
+      localStorage.setItem("image", reader.result);
+      var img = document.querySelector('.picture');
+      img.src = localStorage.getItem('image');
+    };
+
+    if (imgPath) {
+      reader.readAsDataURL(imgPath);
+    }
+  };
+}
+})();
+
+// This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.
+(() => {
+/*!***************************************************!*\
+  !*** ./resources/js/admin/pages/products/edit.js ***!
+  \***************************************************/
+var editProductPage = document.querySelector('.edit-product-page');
+
+if (editProductPage) {
+  var simditors = editProductPage.querySelectorAll('[data-type="simditor"]');
+  var template = editProductPage.querySelector('#product-content').content;
+  var contentTemplate = template.querySelector('dd');
+  var productItem = editProductPage.querySelector('.product-item');
+  var form = editProductPage.querySelector('form');
+
+  window.addNewProductContent = function () {
+    var newContent = contentTemplate.cloneNode(true);
+    var newSimditor = newContent.querySelector('[data-type="simditor"]');
+    productItem.appendChild(newContent);
+    new Simditor({
+      textarea: newSimditor,
+      pasteImage: true,
+      upload: {
+        url: '/upload/simditor_photo',
+        //image upload url by server
+        fileKey: 'simditor_photo',
+        //name of input
+        connectionCount: 3,
+        leaveConfirm: 'Пожалуйста дождитесь окончания загрузки изображений на сервер! Вы уверены что хотите закрыть страницу?'
+      },
+      imageButton: 'upload',
+      toolbar: ['title', 'bold', 'italic', 'underline', 'strikethrough', 'fontScale', 'color', 'ol', 'ul', 'blockquote', 'table', 'link', 'image', 'hr', 'indent', 'outdent', 'alignment']
+    });
+  };
+
+  Simditor.locale = 'ru-RU';
+  simditors.forEach(function (simditor) {
+    new Simditor({
+      textarea: simditor,
+      pasteImage: true,
+      upload: {
+        url: '/upload/simditor_photo',
+        //image upload url by server
+        fileKey: 'simditor_photo',
+        //name of input
+        connectionCount: 3,
+        leaveConfirm: 'Пожалуйста дождитесь окончания загрузки изображений на сервер! Вы уверены что хотите закрыть страницу?'
+      },
+      imageButton: 'upload',
+      toolbar: ['title', 'bold', 'italic', 'underline', 'strikethrough', 'fontScale', 'color', 'ol', 'ul', 'blockquote', 'table', 'link', 'image', 'hr', 'indent', 'outdent', 'alignment']
+    });
+  });
+  form.addEventListener('submit', function (evt) {
+    evt.preventDefault();
+    var elements = form.querySelectorAll('[data-name="content"]');
+    var contents = [];
+
+    for (var i = 0; i < elements.length; i++) {
+      contents[i] = elements[i].value;
+    }
+
+    contents = JSON.stringify(contents);
+    var contentsElement = document.createElement('textarea');
+    contentsElement.name = 'contents';
+    contentsElement.classList.add('visually-hidden');
+    contentsElement.value = contents;
+    form.appendChild(contentsElement);
+    var elementsEditable = form.querySelectorAll('[data-name="content-editable"]');
+    var contentIds = form.querySelectorAll('[data-name="content-id"]');
+    var contentsEditable = [];
+    console.log(contentIds);
+
+    for (var _i = 0; _i < elementsEditable.length; _i++) {
+      var item = {};
+      item.id = contentIds[_i].value;
+      item.content = elementsEditable[_i].value;
+      contentsEditable[_i] = item;
+    }
+
+    contentsEditable = JSON.stringify(contentsEditable);
+    var contentsEditableEl = document.createElement('textarea');
+    contentsEditableEl.name = 'contents_edit';
+    contentsEditableEl.classList.add('visually-hidden');
+    contentsEditableEl.value = contentsEditable;
+    form.appendChild(contentsEditableEl);
+    form.submit();
+  });
+
+  window.previewProductPicture = function () {
+    // get user's uploaded image
+    var imgPath = document.querySelector('#picture').files[0];
+    var reader = new FileReader();
+
+    reader.onloadend = function () {
+      // convert image file to base64 string and save to localStorage
+      localStorage.setItem("image", reader.result);
+      var img = document.querySelector('.picture');
+      img.src = localStorage.getItem('image');
+    };
+
+    if (imgPath) {
+      reader.readAsDataURL(imgPath);
+    }
+  };
+
+  window.deleteProductContent = function (element, id) {
+    $.ajax({
+      url: "/admin/products/delete-content?id=".concat(id),
+      success: function success(response) {
+        if (response == 'success') {
+          element.remove();
+        }
+      }
+    });
+  };
 }
 })();
 

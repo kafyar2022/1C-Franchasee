@@ -28,6 +28,8 @@ mix.js(['resources/js/layouts/master.js',
     'resources/js/admin/pages/projects/index.js',
     'resources/js/admin/pages/projects/create.js',
     'resources/js/admin/pages/projects/edit.js',
+    'resources/js/admin/pages/products/create.js',
+    'resources/js/admin/pages/products/edit.js',
   ], 'public/js/admin.js')
 
 .styles(['resources/css/layouts/master.css',
@@ -42,13 +44,15 @@ mix.js(['resources/js/layouts/master.js',
     'resources/css/pages/publications/index.css',
     'resources/css/pages/publications/read.css',
     'resources/css/pages/projects.css',
-    'resources/css/pages/services.css'
+    'resources/css/pages/services.css',
+    'resources/css/pages/products/read.css',
   ], 'public/css/app.css')
   .styles(['resources/css/admin/layouts/master.css',
     'resources/css/admin/layouts/header.css',
     'resources/css/admin/layouts/footer.css',
     'resources/css/admin/pages/home.css',
-    'resources/css/admin/pages/publications/create.css'
+    'resources/css/admin/pages/publications/create.css',
+    'resources/css/admin/pages/products/create.css',
   ], 'public/css/admin.css')
 
 .version();

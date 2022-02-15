@@ -203,6 +203,10 @@ function switchProductsActions(e) {
 
     formProductsID.value = e.target.dataset.productId;
   }
+
+  // when edit button is clicked switch to product's edit page
+  const editLink = actionsList.querySelector('[data-action="edit"]');
+  editLink.href = editLink.href + `?id=${e.target.dataset.productId}`;
 }
 
 function switchAdvantagesActions(e) {

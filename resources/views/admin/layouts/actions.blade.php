@@ -30,6 +30,9 @@
     <a class="actions-action" href="{{ route('admin.products.create') }}" tabindex="-1">Добавить новый продукт</a>
   </li>
   <li class="actions-item">
+    <a data-action="edit" class="actions-action" href="{{ route('admin.products.edit') }}" tabindex="-1">Редактировать этот продукт</a>
+  </li>
+  <li class="actions-item">
     <button data-action="delete" class="actions-action" type="button" tabindex="-1">Удалить этот продукт</button>
   </li>
 </ul>
