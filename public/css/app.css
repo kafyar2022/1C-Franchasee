@@ -59,7 +59,8 @@ ul:not(.product-item ul) {
   list-style: none;
 }
 
-.product-item ul {
+.product-item ul,
+.product-item ol {
   margin-top: 16px;
   padding-left: 32px;
 }
