@@ -46,6 +46,7 @@ mix.js(['resources/js/layouts/master.js',
     'resources/css/pages/projects.css',
     'resources/css/pages/services.css',
     'resources/css/pages/products/read.css',
+    'resources/css/pages/its.css',
   ], 'public/css/app.css')
   .styles(['resources/css/admin/layouts/master.css',
     'resources/css/admin/layouts/header.css',

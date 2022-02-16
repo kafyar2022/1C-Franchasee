@@ -111,13 +111,27 @@ function switchTextsActions(e) {
     var formCaption = form.querySelector('[name="texts-caption"]'),
         formText = form.querySelector('[name="text"]');
     formCaption.value = e.target.dataset.caption;
-    formText.value = e.target.textContent; // dynamically preview result
+    formText.value = e.target.innerHTML; // dynamically preview result
 
     formText.oninput = function () {
-      e.target.textContent = formText.value;
+      e.target.innerHTML = formText.value;
     };
   };
 }
+
+var textToHTML = function textToHTML(str) {
+  // check for DOMParser support
+  if (support) {
+    var parser = new DOMParser();
+    var doc = parser.parseFromString(str, 'text/html');
+    return doc.body.innerHTML;
+  } // Otherwise, create div and append HTML
+
+
+  var dom = document.createElement('div');
+  dom.innerHTML = str;
+  return dom;
+};
 
 function switchButtonsActions(e) {
   // show buttons's actionsList

@@ -21,7 +21,7 @@
 
 .welcome-title {
   width: max-content;
-  padding: 0px;
+  padding: 0 !important;
   margin-bottom: 24px;
 
   font-weight: 700;
@@ -142,7 +142,7 @@
 }
 
 .whywe-title {
-  padding: 0px;
+  padding: 0 !important;
   margin-bottom: 48px;
 
   font-weight: 700;
