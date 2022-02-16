@@ -24,7 +24,7 @@
           <dt>{!! $footer['site-cards-heading'] !!}</dt>
           @foreach ($footer['site-cards'] as $page)
             <dd>
-              <a class="header-grid-link" href="{{$page->route}}">{{$page->title}}</a>
+              <a class="header-grid-link" href="{{route($page->route)}}">{{$page->title}}</a>
             </dd>
           @endforeach
         </div>
