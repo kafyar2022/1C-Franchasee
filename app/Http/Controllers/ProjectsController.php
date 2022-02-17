@@ -91,12 +91,15 @@ class ProjectsController extends Controller
 
     $project = Project::find($request->id);
 
-    $file = $request->file('logo');
-    $fileName = uniqid() . '.' . $file->getClientOriginalExtension();
-    $path = public_path('img/companies');
-    $file->move($path, $fileName);
 
-    $project->logo = $fileName;
+    $file = $request->file('logo');
+    if ($file) {
+      $fileName = uniqid() . '.' . $file->getClientOriginalExtension();
+      $path = public_path('img/companies');
+      $file->move($path, $fileName);
+      $project->logo = $fileName;
+    }
+
     $project->title = $request->title;
     $project->description_title = $request->description_title;
     $project->description = $request->description;
