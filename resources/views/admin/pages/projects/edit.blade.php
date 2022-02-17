@@ -39,7 +39,7 @@
               <textarea name="content" id="simditor" placeholder="Контент">{{ old('content') ? old('content') : $project->content }}</textarea>
               <div class="btn-wrapper">
                 <button type="submit">Редактировать</button>
-                <button type="reset">Сбросить</button>
+                <button type="reset" onclick="location.reload()">Сбросить</button>
               </div>
             </div>
           </div>

@@ -107,7 +107,7 @@ class ProjectsController extends Controller
 
     try {
       $project->save();
-      return back()->with('success', 'Публикация успешно добавлена');
+      return redirect(route('admin.projects'))->with('success', 'Публикация успешно добавлена');
     } catch (\Throwable $th) {
       return $th;
     }

@@ -65,9 +65,10 @@ ul:not(.product-item ul) {
   padding-left: 32px;
 }
 
-.simdit ul {
-  list-style: disc;
-  padding-left: 40px;
+.simdit ul,
+.our-projects ul {
+  list-style: disc !important;
+  padding-left: 32px !important;
 }
 
 img {
