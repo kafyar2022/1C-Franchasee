@@ -83,7 +83,6 @@ class ProjectsController extends Controller
   public function updateProject(Request $request)
   {
     $request->validate([
-      'logo' => 'required|image|mimes:jpeg,png,jpg,svg|max:10',
       'title' => 'required',
       'description_title' => 'required',
       'description' => 'required|max:250',
