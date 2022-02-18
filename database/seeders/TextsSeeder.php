@@ -774,6 +774,13 @@ class TextsSeeder extends Seeder
         'caption' => 'its-price-users6',
         'text' => '<dt>Пользователей:</dt> <dd>до <span>5</span></dd>',
       ),
+      array(
+        'id' => 98,
+        'type' => null,
+        'page_id' => null,
+        'caption' => 'services-file',
+        'text' => 'services.pdf',
+      ),
     );
 
     foreach ($texts as $text) {

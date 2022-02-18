@@ -47,7 +47,7 @@ class ProjectsController extends Controller
       'logo' => 'required|image|mimes:jpeg,png,jpg,svg|max:10',
       'title' => 'required',
       'description_title' => 'required',
-      'description' => 'required|max:250',
+      'description' => 'required|max:500',
       'content' => 'required',
     ]);
 
@@ -85,7 +85,7 @@ class ProjectsController extends Controller
     $request->validate([
       'title' => 'required',
       'description_title' => 'required',
-      'description' => 'required|max:250',
+      'description' => 'required|max:500',
       'content' => 'required',
     ]);
 
