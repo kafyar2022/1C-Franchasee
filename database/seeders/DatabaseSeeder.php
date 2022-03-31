@@ -20,12 +20,6 @@ class DatabaseSeeder extends Seeder
    */
   public function run()
   {
-    $admin = new Admin;
-    $admin->login = 'admin';
-    $password = 'admin';
-    $admin->password = bcrypt($password);
-    $admin->save();
-
     // =>> our values
     $values = array(
       array('content' => 'Знание тенденций и инноваций'),
