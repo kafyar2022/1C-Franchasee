@@ -10,7 +10,7 @@
             </dd>
           @endforeach
         </div>
-  
+
         <div class="footer-projects">
           <dt>{{$footer['projects-heading']}}</dt>
           @foreach ($footer['projects'] as $project)
@@ -19,7 +19,7 @@
             </dd>
           @endforeach
         </div>
-  
+
         <div class="footer-site-cards">
           <dt>{{$footer['site-cards-heading']}}</dt>
           @foreach ($footer['site-cards'] as $page)
@@ -36,6 +36,9 @@
           </dd>
           <dd>
             <a data-table="texts" data-caption="email" class="header-grid-link" href="mailto:{{str_replace(' ', '', strip_tags($header['email']))}}">{!! $header['email'] !!}</a>
+          </dd>
+          <dd>
+            <a data-table="texts" data-caption="email-2" class="header-grid-link" href="mailto:{{str_replace(' ', '', $header['email-2'])}}">{{$header['email-2']}}</a>
           </dd>
           <dd>
             <a data-table="texts" data-caption="address" class="header-grid-link no-white-space" target="_blank" href="http://maps.google.com/?q={{str_replace(' ', '', strip_tags($header['address']))}}">{!! strip_tags($header['address']) !!}</a>
