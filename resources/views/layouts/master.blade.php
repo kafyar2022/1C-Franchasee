@@ -12,6 +12,10 @@
   <link rel="apple-touch-icon" href="img/favicons/180x180.png">
   <link rel="manifest" href="manifest.webmanifest">
 
+  <meta name="keywords" content="1C-Franchasee, 1C-Franchasee TJ, 1C, 1C в Таджикистане, 1C-Franchasee Tajikistan, автоматизация, бухгалтерия" />
+  <meta property="og:site_name" content="1C-Franchasee">
+  <meta property="og:type" content="object" />
+  <meta name="twitter:card" content="summary_large_image">
   @hasSection('meta-tags')
     @yield('meta-tags')
   @else
@@ -63,17 +67,17 @@
   <script src="{{ mix('js/app.js') }}"></script>
   <script type="text/JavaScript">
     function killCopy(e) {
-            return false
-          }
-          function reEnable(){
-            return true
-          }
-          document.onselectstart = new Function ("return false")
-            if (window.sidebar) {
-              document.onmousedown = killCopy;
-              document.onclick = reEnable;
+              return false
             }
-        </script>
+            function reEnable(){
+              return true
+            }
+            document.onselectstart = new Function ("return false")
+              if (window.sidebar) {
+                document.onmousedown = killCopy;
+                document.onclick = reEnable;
+              }
+          </script>
 </body>
 
 </html>
