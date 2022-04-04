@@ -4,11 +4,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">\
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <meta name="robots" content="none">
-  <meta name="googlebot" content="noindex, nofollow">
-  <meta name="yandex" content="none">
+
+  <link rel="icon" href="favicon.ico">
+  <link rel="icon" href="img/favicons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/favicons/180x180.png">
+  <link rel="manifest" href="manifest.webmanifest">
+
+  @hasSection('meta-tags')
+    @yield('meta-tags')
+  @else
+    <meta name="description" content="Автоматизируем ваши бизнес-процессы. Наша компания является официальным партнером фирмы «1С» и имеет статус «1С:Франчайзи».">
+    <meta property="og:description" content="Автоматизируем ваши бизнес-процессы. Наша компания является официальным партнером фирмы «1С» и имеет статус «1С:Франчайзи».">
+    <meta property="og:title" content="1C-Franchasee" />
+    <meta property="og:image" content="{{ asset('img/favicons/logo.svg') }}">
+    <meta property="og:image:alt" content="Логотип компании">
+    <meta name="twitter:title" content="1C-Franchasee">
+    <meta name="twitter:image" content="{{ asset('img/favicons/logo.svg') }}">
+  @endif
+
   <title>@yield('title') {{ $route != 'home' ? '- 1С:Франчайзи' : '' }}</title>
   {{-- Owl carousel --}}
   <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
@@ -48,17 +63,17 @@
   <script src="{{ mix('js/app.js') }}"></script>
   <script type="text/JavaScript">
     function killCopy(e) {
-      return false
-    }
-    function reEnable(){
-      return true
-    }
-    document.onselectstart = new Function ("return false")
-      if (window.sidebar) {
-        document.onmousedown = killCopy;
-        document.onclick = reEnable;
-      }
-  </script>
+            return false
+          }
+          function reEnable(){
+            return true
+          }
+          document.onselectstart = new Function ("return false")
+            if (window.sidebar) {
+              document.onmousedown = killCopy;
+              document.onclick = reEnable;
+            }
+        </script>
 </body>
 
 </html>

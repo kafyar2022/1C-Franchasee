@@ -2,6 +2,19 @@
 
 @section('title', $publication->title)
 
+@section('meta-tags')
+  @php
+  //remove tags and slice body
+  $share_text = preg_replace('#<[^>]+>#', ' ', $publication->content);
+  $share_text = mb_strlen($share_text) < 170 ? $share_text : mb_substr($share_text, 0, 166) . '...';
+  @endphp
+  <meta name="description" content="{{ $share_text }}">
+  <meta property="og:description" content="{{ $share_text }}">
+  <meta property="og:title" content="{{ $publication->title }}" />
+  <meta property="og:image:alt" content="{{ $publication->title }}">
+  <meta name="twitter:title" content="{{ $publication->title }}">
+@endsection
+
 @section('content')
   <main class="publications-read-page">
     <div class="container">
@@ -20,7 +33,7 @@
         </li>
       </ul>
     </div>
-    
+
     <section class="read-publication">
       <div class="container">
         <time datetime="{{$publication->created_at}}">{{date("d.m.Y", strtotime($publication->created_at));}}</time>
@@ -42,4 +55,3 @@
     </section>
   </main>
 @endsection
-    
