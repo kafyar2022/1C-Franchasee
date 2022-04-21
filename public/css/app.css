@@ -1008,9 +1008,11 @@ body.products-dropdown .products-dropdown-list {
     text-align: end;
   }
 
-  .header-grid-item:first-child,
+  .header-grid-item:first-child {
+    display: none;
+  }
   .header-grid-item:nth-child(2) {
-    grid-row: span 1;
+    grid-row: span 2;
   }
 
   .header-grid-item:last-child {
@@ -1299,6 +1301,7 @@ body.products-dropdown .products-dropdown-list {
 }
 
 /*! <= adaptive */
+
 .footer {
   padding-top: 32px;
 }

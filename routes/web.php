@@ -103,3 +103,7 @@ Route::group(['middleware' => ['AuthCheck']], function () {
   // <<= admin routes
 });
 // <<= admin panel routes
+
+
+Route::permanentRedirect('/about-us', '/about');
+Route::permanentRedirect('/1s-its', '/its');

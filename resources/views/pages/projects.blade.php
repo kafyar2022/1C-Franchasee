@@ -49,7 +49,7 @@
             <a class="company" href="{{ $company->site }}" target="_blank" tabindex="-1">
               <img class="company-logo" src="{{ asset('img/companies/' . $company->logo) }}" alt="{{ $company->title }}">
               <h3 class="company-title">{{ $company->title }}</h3>
-              <p class="company-category">{{ $company->category }}</p>
+              {{-- <p class="company-category">{{ $company->category }}</p> --}}
             </a>
           @endforeach
         </div>

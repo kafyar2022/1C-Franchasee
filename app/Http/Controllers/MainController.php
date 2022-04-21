@@ -19,7 +19,7 @@ class MainController extends Controller
   {
     // Find admin by login
     $admin = Admin::where('login', $request->login)->first();
-    // Match the passwords 
+    // Match the passwords
     if ($admin && Hash::check($request->password, $admin->password)) {
       $request->session()->put('admin', $admin->id);
       return redirect(route('admin.home'));
@@ -45,7 +45,7 @@ class MainController extends Controller
     if (Mail::failures()) {
       return 'fail';
     } else {
-      Mail::to('fleck97rgb@gmail.com')->send(new FeedbackMail($details));
+      Mail::to('diis@orienpharm.tj')->send(new FeedbackMail($details));
       return 'success';
     }
   }

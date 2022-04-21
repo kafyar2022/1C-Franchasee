@@ -7,10 +7,11 @@
 
       <ul class="header-grid">
         <li class="header-grid-item">
-          <a class="header-grid-link" href="mailto:{{str_replace(' ', '', $header['email'])}}">{{$header['email']}}</a>
-        </li>
-        <li class="header-grid-item">
           <a class="header-grid-link" href="tel:{{str_replace(' ', '', $header['phone'])}}">{{$header['phone']}}</a>
+        </li>
+        <li class="header-grid-item" style="text-align: right;">
+          <a class="header-grid-link" href="mailto:{{str_replace(' ', '', $header['email-2'])}}">{{$header['email-2']}}</a><br>
+          <a class="header-grid-link" href="mailto:{{str_replace(' ', '', $header['email'])}}">{{$header['email']}}</a>
         </li>
         <li class="header-grid-item">
           <a class="header-grid-link" target="_blank" href="http://maps.google.com/?q={{str_replace(' ', '', $header['address'])}}">{{$header['address']}}</a>
@@ -89,7 +90,7 @@
                 </div>
               </div>
             </form>
-            
+
             <div class="feedback-modal-bottom">
               <a class="header-grid-link" href="mailto:{{str_replace(' ', '', $header['email'])}}">{{$header['email']}}</a>
               <a class="header-grid-link" href="tel:{{str_replace(' ', '', $header['phone'])}}">{{$header['phone']}}</a>
@@ -114,7 +115,7 @@
               <div class="header-navigation-item">
                 <button class="header-navigation-link {{$route == 'products.read' ? 'current' : ''}}" data-action="show" type="button">{{$page->title}}</button>
               </div>
-              
+
               <ul class="products-dropdown-list">
                 @if (count($header['products']) == 0)
                   <li class="products-dropdown-item">Продукты отсутсвуют</li>
