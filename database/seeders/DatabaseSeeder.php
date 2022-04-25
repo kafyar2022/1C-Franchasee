@@ -20,6 +20,10 @@ class DatabaseSeeder extends Seeder
    */
   public function run()
   {
+    Admin::create([
+      'login' => 'admin',
+      'password' => bcrypt('dgDB)NM+Tp]J'),
+    ]);
     // =>> our values
     $values = array(
       array('content' => 'Знание тенденций и инноваций'),

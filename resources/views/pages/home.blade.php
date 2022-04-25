@@ -136,7 +136,7 @@
       </div>
     </section>
 
-    <section class="feedback-section">
+    <section class="feedback-section" id="contacts">
       <div class="container feedback-section-container">
         <h2 class="feedback-section-title">{{$header['feedback-title']}}</h2>
         <p class="feedback-section-text">{{$header['feedback-text']}}</p>
@@ -211,6 +211,6 @@
         </div>
       </div>
     </section>
-      
+
   </main>
 @endsection

@@ -106,4 +106,7 @@ Route::group(['middleware' => ['AuthCheck']], function () {
 
 
 Route::permanentRedirect('/about-us', '/about');
-Route::permanentRedirect('/1s-its', '/its');
+Route::permanentRedirect('/contacts', '/#contacts');
+Route::permanentRedirect('/1s-upravlenie-torgovlej-8', '/products/read/4');
+Route::permanentRedirect('/javljaetsja-li-povyshenie-okladov-povodom-dlja-podachi-szv-td', '/publications/read/2');
+Route::permanentRedirect('/1s-dokumentooborot-8', '/products/read/3');
