@@ -34,9 +34,9 @@
           <dd>
             <a data-table="texts" data-caption="phone" class="header-grid-link" href="tel:{{str_replace(' ', '', strip_tags($header['phone']))}}">{!! $header['phone'] !!}</a>
           </dd>
-          <dd>
+          {{-- <dd>
             <a data-table="texts" data-caption="email" class="header-grid-link" href="mailto:{{str_replace(' ', '', strip_tags($header['email']))}}">{!! $header['email'] !!}</a>
-          </dd>
+          </dd> --}}
           <dd>
             <a data-table="texts" data-caption="email-2" class="header-grid-link" href="mailto:{{str_replace(' ', '', $header['email-2'])}}">{{$header['email-2']}}</a>
           </dd>

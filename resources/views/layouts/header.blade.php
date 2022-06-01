@@ -11,7 +11,7 @@
         </li>
         <li class="header-grid-item" style="text-align: right;">
           <a class="header-grid-link" href="mailto:{{str_replace(' ', '', $header['email-2'])}}">{{$header['email-2']}}</a><br>
-          <a class="header-grid-link" href="mailto:{{str_replace(' ', '', $header['email'])}}">{{$header['email']}}</a>
+          {{-- <a class="header-grid-link" href="mailto:{{str_replace(' ', '', $header['email'])}}">{{$header['email']}}</a> --}}
         </li>
         <li class="header-grid-item">
           <a class="header-grid-link" target="_blank" href="http://maps.google.com/?q={{str_replace(' ', '', $header['address'])}}">{{$header['address']}}</a>

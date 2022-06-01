@@ -7,7 +7,7 @@
 
       <ul class="header-grid">
         <li class="header-grid-item">
-          <a data-table="texts" data-caption="email" class="header-grid-link" href="mailto:{{str_replace(' ', '', $header['email'])}}">{{$header['email']}}</a>
+          <a data-table="texts" data-caption="email" class="header-grid-link" href="mailto:{{str_replace(' ', '', $header['email-2'])}}">{{$header['email-2']}}</a>
         </li>
         <li class="header-grid-item">
           <a data-table="texts" data-caption="phone" class="header-grid-link" href="tel:{{str_replace(' ', '', $header['phone'])}}">{{$header['phone']}}</a>
@@ -89,7 +89,7 @@
                 </div>
               </div>
             </form>
-            
+
             <div class="feedback-modal-bottom">
               <a data-table="texts" data-caption="email" class="header-grid-link" href="mailto:{{str_replace(' ', '', $header['email'])}}">{{$header['email']}}</a>
               <a data-table="texts" data-caption="phone" class="header-grid-link" href="tel:{{str_replace(' ', '', $header['phone'])}}">{{$header['phone']}}</a>
@@ -114,7 +114,7 @@
               <div class="header-navigation-item">
                 <button data-table="pages" data-page-id="{{$page->id}}" data-route="products" class="header-navigation-link {{$route == 'admin.products.read' ? 'current' : ''}}" data-action="show" type="button">{{$page->title}}</button>
               </div>
-              
+
               <ul class="products-dropdown-list">
                 @if (count($header['products']) == 0)
                   <li data-table="pages" data-page-id="{{$page->id}}" data-route="products" class="products-dropdown-item">Продукты отсутсвуют</li>
@@ -129,7 +129,7 @@
             </li>
           @elseif($page->route == 'publications')
             <li class="header-navigation-item">
-              <a data-table="pages" data-page-id="{{$page->id}}" data-route="{{$page->route}}" class="header-navigation-link {{$route == 'admin.publications' 
+              <a data-table="pages" data-page-id="{{$page->id}}" data-route="{{$page->route}}" class="header-navigation-link {{$route == 'admin.publications'
               || $route == 'admin.publications.create'
               || $route == 'admin.publications.read'
               || $route == 'admin.publications.update' ? 'current' : ''}}" href="{{route('admin.publications')}}">{{$page->title}}</a>

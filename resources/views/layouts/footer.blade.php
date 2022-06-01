@@ -34,9 +34,9 @@
           <dd>
             <a class="header-grid-link" href="tel:{{str_replace(' ', '', $header['phone'])}}">{{$header['phone']}}</a>
           </dd>
-          <dd>
+          {{-- <dd>
             <a class="header-grid-link" href="mailto:{{str_replace(' ', '', $header['email'])}}">{{$header['email']}}</a>
-          </dd>
+          </dd> --}}
           <dd>
             <a class="header-grid-link" href="mailto:{{str_replace(' ', '', $header['email-2'])}}">{{$header['email-2']}}</a>
           </dd>
